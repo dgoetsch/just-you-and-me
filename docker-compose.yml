@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./src/web
+    ports:
+      - 4200:4200
+  api:
+    build:
+      context: ./src/api
+    ports:
+    - 8080:8080
+  db:
+    image: postgres
+    restart: always
+    volumes:
+    - db-data:/var/lib/postgresql/data
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: develop
+      POSTGRES_DB: api
+ 
+volumes:
+  db-data:
+    driver: local
