@@ -7,9 +7,6 @@ resource "google_cloudbuild_trigger" "api-build-trigger" {
     repo_name   = "github_dgoetsch_just-you-and-me"
   }
 
-    filename = "/mnt/terraform/cloudbuild/api.yml"
+    filename = "deploy/cloudbuild/api.yml"
 }
 
-//trigger (cloudbuild)
-//runtime (cloudrun)
-//(container registry)
