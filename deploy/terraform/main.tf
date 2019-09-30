@@ -10,3 +10,14 @@ resource "google_cloudbuild_trigger" "api-build-trigger" {
     filename = "deploy/cloudbuild/api.yml"
 }
 
+resource "google_cloudbuild_trigger" "web-build-trigger" {
+  included_files = [
+      "src/web/**"
+    ]
+  trigger_template {
+    branch_name = "${var.branch}"
+    repo_name   = "github_dgoetsch_just-you-and-me"
+  }
+
+    filename = "deploy/cloudbuild/api.yml"
+}

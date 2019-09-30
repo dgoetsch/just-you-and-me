@@ -16,8 +16,8 @@ terraform init \
     -input=false \
     /mnt/terraform/
 
+[[ "apply" == "$TF_CMD" ]] && AUTO_APPROVE="-auto-approve"
 terraform $TF_CMD \
     -var-file=/mnt/config/defaults.tf \
     -input=false \
-    -auto-approve \
-    /mnt/terraform/
+    $AUTO_APPROVE /mnt/terraform/
