@@ -2,3 +2,4 @@ src/*/.gradle
 src/*/.idea
 src/*/build
 src/*/node_modules
+deploy/.creds
